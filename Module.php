@@ -1,6 +1,6 @@
 <?php
 
-namespace filsh\yii2\oauth2server;
+namespace anek77713\yii2\oauth2server;
 
 use \Yii;
 
@@ -9,7 +9,7 @@ use \Yii;
  * 
  * ```php
  * 'oauth2' => [
- *     'class' => 'filsh\yii2\oauth2server\Module',
+ *     'class' => 'anek77713\yii2\oauth2server\Module',
  *     'options' => [
  *         'token_param_name' => 'accessToken',
  *         'access_lifetime' => 3600
@@ -39,7 +39,7 @@ class Module extends \yii\base\Module
     
     public $storageMap = [];
     
-    public $storageDefault = 'filsh\yii2\oauth2server\storage\Pdo';
+    public $storageDefault = 'anek77713\yii2\oauth2server\storage\Pdo';
     
     public $grantTypes = [];
     
@@ -189,11 +189,11 @@ class Module extends \yii\base\Module
     protected function getDefaultModelClasses()
     {
         return [
-            'Clients' => 'filsh\yii2\oauth2server\models\OauthClients',
-            'AccessTokens' => 'filsh\yii2\oauth2server\models\OauthAccessTokens',
-            'AuthorizationCodes' => 'filsh\yii2\oauth2server\models\OauthAuthorizationCodes',
-            'RefreshTokens' => 'filsh\yii2\oauth2server\models\OauthRefreshTokens',
-            'Scopes' => 'filsh\yii2\oauth2server\models\OauthScopes',
+            'Clients' => 'anek77713\yii2\oauth2server\models\OauthClients',
+            'AccessTokens' => 'anek77713\yii2\oauth2server\models\OauthAccessTokens',
+            'AuthorizationCodes' => 'anek77713\yii2\oauth2server\models\OauthAuthorizationCodes',
+            'RefreshTokens' => 'anek77713\yii2\oauth2server\models\OauthRefreshTokens',
+            'Scopes' => 'anek77713\yii2\oauth2server\models\OauthScopes',
         ];
     }
 }
