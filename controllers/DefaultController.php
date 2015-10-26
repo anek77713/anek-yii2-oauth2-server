@@ -28,14 +28,14 @@ class DefaultController extends \yii\rest\Controller
         $request = $this->module->getRequest();
 
         $oauthClientModel = new OauthClients();
-        $client = $oauthClientModel::find()->where(['client_id' => 'testclient'])->one();
+        $client = $oauthClientModel::find()->where(['client_id' => $request->request("client_id")])->one();
 
         $userModel = new User();
         $user = $userModel::find()->where(['email' => $request->request("username")])->one();
 
         if ($client->client_id && $user->id) {
             if ($user->id !== $client->user_id) {
-                throw new \yii\web\HttpException(400, 'Invalid user and client credential combination', 0);
+                throw new \yii\web\HttpException(400, 'Invalid user and client credentials combination', 0);
             }
         }
 
